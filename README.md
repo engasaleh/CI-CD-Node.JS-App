@@ -202,20 +202,17 @@ Start New Container
 Health Check
 ```
 
----
-
 ## 📸 Screenshots (Ordered)
 
-> **Order requested:** Security Groups (3) → EC2 Instance (2) → EC2 NodeJS Status (1) → Deployed Page (4)
-
-![Security Groups](security%20groups.png)
-
-![EC2 Instance](EC2%20Instance.png)
+> **Order requested:** EC2 NodeJS Status (1) → EC2 Instance (2) → Security Groups (3) → Deployed Page (4)
 
 ![EC2 NodeJS Status](EC2_NodeJS-status.png)
 
-![Deployed Page](deployed%20page.png)
+![EC2 Instance](EC2%20Instance.png)
 
+![Security Groups](security%20groups.png)
+
+![Deployed Page](deployed%20page.png)
 ---
 
 ## 🎯 Summary
