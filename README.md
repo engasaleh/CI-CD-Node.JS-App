@@ -210,7 +210,7 @@ Health Check
 
 ![EC2 NodeJS Status](EC2_NodeJS-status.png)
 
-### 2) EC2 Instance Detials
+### 2) EC2 Instance Details
 
 ![EC2 Instance](EC2%20Instance.png)
 
