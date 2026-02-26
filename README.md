@@ -7,11 +7,11 @@ This repository contains a complete **CI/CD automation pipeline** for deploying 
 
 The project demonstrates essential DevOps principles including:
 
-- Automated build and deployment workflow  
-- Docker containerization  
-- Continuous Integration via GitHub Actions  
-- Continuous Deployment to AWS EC2  
-- Automatic health checks after deployment  
+- Automated build and deployment workflow
+- Docker containerization
+- Continuous Integration via GitHub Actions
+- Continuous Deployment to AWS EC2
+- Automatic health checks after deployment
 
 This repository represents a real-world, fully automated DevOps pipeline.
 
@@ -19,12 +19,12 @@ This repository represents a real-world, fully automated DevOps pipeline.
 
 ## 🎯 Project Objectives
 
-- Automate the build and deployment of a Node.js application  
-- Containerize the application using Docker  
-- Automatically push Docker images to Docker Hub  
-- Deploy new versions on an EC2 instance once code is pushed to `main`  
-- Maintain a clean and simple CI/CD workflow  
-- Apply fast, idempotent, and reliable deployment practices  
+- Automate the build and deployment of a Node.js application
+- Containerize the application using Docker
+- Automatically push Docker images to Docker Hub
+- Deploy new versions on an EC2 instance once code is pushed to `main`
+- Maintain a clean and simple CI/CD workflow
+- Apply fast, idempotent, and reliable deployment practices
 
 ---
 
@@ -41,17 +41,17 @@ This repository represents a real-world, fully automated DevOps pipeline.
 
 ## 📂 Project Structure
 
-```
+```text
 CI-CD-NodeJS-App/
 │
 ├── app.js                  # Main Node.js application
 ├── package.json            # Dependencies & app metadata
 ├── Dockerfile              # Docker image definition
 ├── README.md               # Project documentation
-├── 2024_1.png
-├── Screenshot (107).png
-├── Screenshot (108).png
-├── Screenshot (109).png
+├── EC2 Instance.png
+├── EC2_NodeJS-status.png
+├── deployed page.png
+├── security groups.png
 │
 └── .github/
     └── workflows/
@@ -118,28 +118,28 @@ docker run -p 3000:3000 nodejs-app
 
 The CI/CD pipeline is implemented in:
 
-```
+```text
 .github/workflows/push-up.yaml
 ```
 
 ### 🔁 Triggered On:
 
-- Push to `main`  
+- Push to `main`
 - Pull Requests targeting `main`
 
 ### 🔧 Pipeline Steps:
 
-- Checkout repository  
-- Set up Docker Buildx  
-- Authenticate to Docker Hub  
-- Build Docker image  
-- Push image to Docker Hub (for pushes to main)  
-- SSH into AWS EC2  
-- Pull latest image  
-- Stop old container (if exists)  
-- Start new container mapped to `${DEPLOY_PORT}`  
-- Apply Docker health checks  
-- Clean up old Docker images  
+1. Checkout repository
+2. Set up Docker Buildx
+3. Authenticate to Docker Hub
+4. Build Docker image
+5. Push image to Docker Hub (for pushes to `main`)
+6. SSH into AWS EC2
+7. Pull latest image
+8. Stop old container (if exists)
+9. Start new container mapped to `${DEPLOY_PORT}`
+10. Apply Docker health checks
+11. Clean up old Docker images
 
 ---
 
@@ -149,13 +149,13 @@ Add these under:
 
 **Settings → Secrets and variables → Actions**
 
-| Secret Name        | Description                 |
-|-------------------|-----------------------------|
-| DOCKER_USERNAME   | Docker Hub username         |
-| DOCKER_PASSWORD   | Docker Hub password/token   |
-| AWS_SSH_KEY       | Private SSH key for EC2     |
-| AWS_HOST          | EC2 public IP/DNS           |
-| DEPLOY_PORT       | Port exposed on EC2 server  |
+| Secret Name      | Description                |
+|------------------|----------------------------|
+| DOCKER_USERNAME  | Docker Hub username        |
+| DOCKER_PASSWORD  | Docker Hub password/token  |
+| AWS_SSH_KEY      | Private SSH key for EC2    |
+| AWS_HOST         | EC2 public IP/DNS          |
+| DEPLOY_PORT      | Port exposed on EC2 server |
 
 ---
 
@@ -175,7 +175,7 @@ npm start
 
 Visit:
 
-```
+```text
 http://localhost:3000
 ```
 
@@ -183,7 +183,7 @@ http://localhost:3000
 
 ## 🌐 Deployment Architecture
 
-```
+```text
         ↓
 GitHub Actions CI/CD Pipeline
         ↓
@@ -204,8 +204,21 @@ Health Check
 
 ---
 
+## 📸 Screenshots (Ordered)
+
+> **Order requested:** Security Groups (3) → EC2 Instance (2) → EC2 NodeJS Status (1) → Deployed Page (4)
+
+![Security Groups](security%20groups.png)
+
+![EC2 Instance](EC2%20Instance.png)
+
+![EC2 NodeJS Status](EC2_NodeJS-status.png)
+
+![Deployed Page](deployed%20page.png)
+
+---
+
 ## 🎯 Summary
 
 This project demonstrates a complete, real-world CI/CD pipeline using **GitHub Actions**, **Docker**, and **AWS EC2**.
 The pipeline builds, ships, deploys, and verifies the application automatically—making it an efficient and fully automated DevOps workflow.
-
