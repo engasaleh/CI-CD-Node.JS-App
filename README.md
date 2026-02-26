@@ -206,12 +206,18 @@ Health Check
 
 > **Order requested:** EC2 NodeJS Status (1) → EC2 Instance (2) → Security Groups (3) → Deployed Page (4)
 
+### 1) EC2 NodeJS Status
+
 ![EC2 NodeJS Status](EC2_NodeJS-status.png)
+
+### 2) EC2 Instance Detials
 
 ![EC2 Instance](EC2%20Instance.png)
 
+### 3) Security Groups 
 ![Security Groups](security%20groups.png)
 
+### 4) Deployed Page 
 ![Deployed Page](deployed%20page.png)
 ---
 
